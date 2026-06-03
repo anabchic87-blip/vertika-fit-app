@@ -1,0 +1,38 @@
+PASOS PARA ACTIVAR FIREBASE EN VÉRTIKA FIT
+
+1. Entra en Firebase Console:
+   https://console.firebase.google.com/
+
+2. Crea un proyecto:
+   Nombre recomendado: vertika-fit
+
+3. Activa Authentication:
+   Build → Authentication → Get started
+   Sign-in method → Email/Password → Enable
+
+4. Activa Firestore:
+   Build → Firestore Database → Create database
+   Empieza en modo test para probar.
+
+5. Crea una app web:
+   Project settings → General → Your apps → Web app
+   Copia el firebaseConfig.
+
+6. Abre el archivo:
+   js/firebase-config.js
+
+7. Sustituye:
+   PEGA_AQUI_TU_API_KEY
+   PEGA_AQUI_TU_AUTH_DOMAIN
+   PEGA_AQUI_TU_PROJECT_ID
+   PEGA_AQUI_TU_STORAGE_BUCKET
+   PEGA_AQUI_TU_MESSAGING_SENDER_ID
+   PEGA_AQUI_TU_APP_ID
+
+8. Sube todo a GitHub.
+
+9. Abre la app:
+   Te aparecerá pantalla de Login / Registro.
+
+10. Cuando guardes peso y cintura en Transformación:
+   Se guardará en localStorage y también en Firestore.
