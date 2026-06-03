@@ -1,0 +1,25 @@
+{
+  "name": "VÉRTIKA FIT",
+  "short_name": "VÉRTIKA",
+  "description": "App fitness VÉRTIKA FIT: dieta, HYROX, progreso, suplementos y lista de la compra.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff7ef",
+  "theme_color": "#f26a21",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

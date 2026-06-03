@@ -1,0 +1,48 @@
+VÉRTIKA FIT 15.2 · Proyecto Firebase nuevo
+
+Proyecto usado:
+- projectId: vertika-fit-app
+- authDomain: vertika-fit-app.firebaseapp.com
+
+Antes de probar:
+1. Firebase → Authentication → Método de acceso
+   Activa Correo electrónico/contraseña.
+
+2. Firebase → Authentication → Configuración → Dominios autorizados
+   Añade:
+   anabchic87-blip.github.io
+   localhost
+
+3. Firebase → Firestore Database
+   Crea base de datos en modo prueba.
+
+4. Firestore → Reglas
+   Puedes usar:
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /usuarios/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /perfiles/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /transformaciones/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /contenidos/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
+
+Si la app sigue cargando versión antigua:
+- Ctrl + Shift + R
+- F12 → Aplicación → Service Workers → Unregister
+- Borrar caché del sitio
