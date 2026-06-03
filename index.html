@@ -55,56 +55,98 @@
       <div class="user-chip">Ana Belén</div>
     </header>
 
+
     <section id="dashboard" class="page">
-      <div class="welcome">
-        <div>
-          <h2>Tu campus VÉRTIKA FIT</h2>
-          <p>Un index visual para organizar tu dieta, entrenamiento HYROX, progreso, suplementos y lista de la compra.</p>
-          <button onclick="mostrarSeccion('perfil')">Configurar mi perfil</button>
+      <div class="premium-hero">
+        <div class="hero-watermark">☀</div>
+        <div class="premium-hero-content">
+          <span class="vertika-pill">☀ VÉRTIKA FIT 4.0</span>
+          <h2 id="saludoAna">Buenos días, Ana</h2>
+          <p class="hero-quote" id="fraseDia">Move. Teach. Inspire.</p>
+
+          <div class="progress-block">
+            <div class="progress-head">
+              <span>80 kg</span>
+              <strong>Objetivo 72 kg</strong>
+              <span>72 kg</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%" id="pesoProgress"></div>
+            </div>
+            <p id="progresoTexto">Tu camino VÉRTIKA empieza hoy.</p>
+          </div>
         </div>
       </div>
 
-      <div class="stats-grid">
-        <article class="stat-card">
-          <span>Objetivo</span>
-          <strong>Perder grasa</strong>
-          <p>Déficit controlado y proteína alta.</p>
-        </article>
-        <article class="stat-card">
-          <span>Entreno</span>
-          <strong>HYROX 4 días</strong>
-          <p>Fuerza + cardio + cinta inclinada.</p>
-        </article>
-        <article class="stat-card">
-          <span>Plan</span>
-          <strong>Semanal</strong>
-          <p>Menús con gramos y compra.</p>
-        </article>
+      <div class="premium-kpi-grid">
+        <article class="premium-kpi"><span>⚖️</span><small>Peso actual</small><strong>80 kg</strong><em>Inicio registrado</em></article>
+        <article class="premium-kpi"><span>🎯</span><small>Objetivo</small><strong>72 kg</strong><em>Meta principal</em></article>
+        <article class="premium-kpi"><span>📏</span><small>Cintura</small><strong>97 cm</strong><em>Medida inicial</em></article>
+        <article class="premium-kpi"><span>🔥</span><small>Calorías</small><strong>1900</strong><em>kcal/día aprox.</em></article>
+        <article class="premium-kpi"><span>💪</span><small>Proteína</small><strong>145 g</strong><em>Objetivo diario</em></article>
       </div>
 
-      <div class="course-grid">
-        <article class="course-card" onclick="mostrarSeccion('plan')">
-          <div class="icon">🥗</div>
-          <h3>Plan nutricional</h3>
-          <p>Calorías, proteínas, carbohidratos y grasas.</p>
-        </article>
-        <article class="course-card" onclick="mostrarSeccion('menuSemanal')">
-          <div class="icon">📅</div>
-          <h3>Menú semanal</h3>
-          <p>Comidas de lunes a domingo con cantidades.</p>
-        </article>
-        <article class="course-card" onclick="mostrarSeccion('hyrox')">
-          <div class="icon">🔥</div>
-          <h3>HYROX</h3>
-          <p>Rutina de fuerza, anaeróbico y cardio.</p>
-        </article>
-        <article class="course-card" onclick="mostrarSeccion('progreso')">
-          <div class="icon">📈</div>
-          <h3>Progreso</h3>
-          <p>Peso, cintura y sensaciones semanales.</p>
-        </article>
+      <div class="dashboard-premium-grid">
+        <section class="mission-card">
+          <div class="card-title-row">
+            <div><h3>🏆 Misiones de hoy</h3><p>Marca tus hábitos diarios y crea constancia.</p></div>
+            <div class="sun-badge">☀</div>
+          </div>
+          <div class="missions-list">
+            <label><input type="checkbox" class="mission-check" data-mission="agua"> 💧 Beber 2 litros de agua</label>
+            <label><input type="checkbox" class="mission-check" data-mission="creatina"> 💊 Tomar creatina</label>
+            <label><input type="checkbox" class="mission-check" data-mission="proteina"> 💪 Llegar a 145 g de proteína</label>
+            <label><input type="checkbox" class="mission-check" data-mission="entreno"> 🔥 Entrenamiento HYROX</label>
+            <label><input type="checkbox" class="mission-check" data-mission="pasos"> 🚶 10.000 pasos</label>
+          </div>
+          <div class="mission-footer">
+            <strong id="missionCounter">0/5 completadas</strong>
+            <div class="mini-progress"><div id="missionProgress"></div></div>
+          </div>
+        </section>
+
+        <section class="streak-card">
+          <div class="card-title-row">
+            <div><h3>☀️ Racha VÉRTIKA</h3><p>Completa las 5 misiones para sumar un día.</p></div>
+            <div class="sun-badge">☀</div>
+          </div>
+          <div class="streak-number"><strong id="rachaDias">0</strong><span>días</span></div>
+          <p class="streak-text" id="rachaTexto">Tu primera racha empieza hoy.</p>
+        </section>
+
+        <section class="training-card">
+          <div class="card-title-row">
+            <div><h3>🔥 Próximo entrenamiento</h3><p>HYROX pecho + brazos</p></div>
+            <div class="sun-badge">☀</div>
+          </div>
+          <ul>
+            <li>Press banca 4x10</li>
+            <li>Curl bíceps 4x12</li>
+            <li>Fondos tríceps 4x10</li>
+            <li>Circuito anaeróbico 4 rondas</li>
+          </ul>
+          <button onclick="mostrarSeccion('hyrox')">▶ Ver entrenamiento</button>
+        </section>
+
+        <section class="food-card">
+          <div class="card-title-row">
+            <div><h3>🥗 Comida de hoy</h3><p>Desayuno recomendado</p></div>
+            <div class="sun-badge">☀</div>
+          </div>
+          <p><strong>Yogur griego 0% 200 g</strong></p>
+          <p>Avena 40 g + frutos rojos 100 g</p>
+          <button onclick="mostrarSeccion('menuSemanal')">Ver menú completo</button>
+        </section>
+      </div>
+
+      <div class="course-grid premium-modules">
+        <article class="course-card" onclick="mostrarSeccion('plan')"><div class="corner-sun">☀</div><div class="icon">🥗</div><h3>Plan nutricional</h3><p>Calorías, proteínas, carbohidratos y grasas.</p></article>
+        <article class="course-card" onclick="mostrarSeccion('menuSemanal')"><div class="corner-sun">☀</div><div class="icon">📅</div><h3>Menú semanal</h3><p>Comidas de lunes a domingo con cantidades.</p></article>
+        <article class="course-card" onclick="mostrarSeccion('hyrox')"><div class="corner-sun">☀</div><div class="icon">🔥</div><h3>HYROX</h3><p>Rutina de fuerza, anaeróbico y cardio.</p></article>
+        <article class="course-card" onclick="mostrarSeccion('progreso')"><div class="corner-sun">☀</div><div class="icon">📈</div><h3>Progreso</h3><p>Peso, cintura y sensaciones semanales.</p></article>
       </div>
     </section>
+
 
     <section id="perfil" class="page hidden">
       <h2>Mi perfil</h2>
