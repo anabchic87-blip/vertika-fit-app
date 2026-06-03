@@ -1,11 +1,11 @@
 // VÉRTIKA FIT · Firebase real
-// Proyecto nuevo: VERTIKA-FIT-APP
+// Proyecto: vertika-fit-app-c361a
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyA7rmz0-gabMUv1e7L3oWL9Ui8_fNI8bWg",
-  authDomain: "vertika-fit-app.firebaseapp.com",
-  projectId: "vertika-fit-app",
-  storageBucket: "vertika-fit-app.firebasestorage.app",
-  messagingSenderId: "990118721838",
-  appId: "1:990118721838:web:1c8c36aedb5baa01afe2bf"
+  apiKey: "AIzaSyA8qlF6AfXAlLCLvrooG8IY0fBSHWCpfEU",
+  authDomain: "vertika-fit-app-c361a.firebaseapp.com",
+  projectId: "vertika-fit-app-c361a",
+  storageBucket: "vertika-fit-app-c361a.firebasestorage.app",
+  messagingSenderId: "746569602423",
+  appId: "1:746569602423:web:b7713b5746cee4fdd63d72"
 };
