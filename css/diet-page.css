@@ -1,0 +1,148 @@
+/* VÉRTIKA FIT · Menús HTML */
+.diet-page-body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(242,106,33,.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(155,124,199,.22), transparent 28%),
+    linear-gradient(135deg, #fff7ef, #ead3f7);
+  color: #24212a;
+  min-height: 100vh;
+}
+
+.diet-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.diet-header {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.92), rgba(255,247,239,.82)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+  background-size: 230px;
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(66,36,100,.16);
+  margin-bottom: 18px;
+}
+
+.diet-header a {
+  color: #f26a21;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.diet-header h1 {
+  color: #f26a21;
+  font-size: 36px;
+  margin: 18px 0 8px;
+}
+
+.diet-header p {
+  color: #6f4aa0;
+  font-weight: 700;
+  max-width: 650px;
+}
+
+.diet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.diet-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #f26a21, #ff9658);
+  color: white;
+  font-weight: 900;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.day-card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: 0 18px 45px rgba(66,36,100,.12);
+}
+
+.day-card h2 {
+  color: #6f4aa0;
+  margin-top: 0;
+}
+
+.meal {
+  background: #fff7ef;
+  padding: 13px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.meal h3 {
+  color: #f26a21;
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.meal p {
+  margin: 0;
+  color: #6d6076;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.shopping-box {
+  background: rgba(255,255,255,.88);
+  border-radius: 26px;
+  padding: 20px;
+  margin-top: 18px;
+  box-shadow: 0 18px 45px rgba(66,36,100,.12);
+}
+
+.shopping-box h2 {
+  color: #f26a21;
+  margin-top: 0;
+}
+
+.shopping-list {
+  columns: 2;
+  list-style: none;
+  padding: 0;
+}
+
+.shopping-list li {
+  background: #fff7ef;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  color: #6d6076;
+  font-weight: 700;
+  break-inside: avoid;
+}
+
+@media (max-width: 760px) {
+  .days-grid {
+    grid-template-columns: 1fr;
+  }
+  .shopping-list {
+    columns: 1;
+  }
+  .diet-header {
+    background-size: 150px;
+    background-position: right 12px bottom 12px;
+  }
+}
