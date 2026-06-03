@@ -36,12 +36,9 @@
     <nav class="menu">
       <button class="active" onclick="mostrarSeccion('dashboard', this)">Inicio</button>
       <button onclick="mostrarSeccion('perfil', this)">Mi perfil</button>
-      <button onclick="mostrarSeccion('plan', this)">Plan nutricional</button>
-      <button onclick="mostrarSeccion('iaNutricional', this)">IA Nutricional</button>
       <button onclick="mostrarSeccion('menuSemanal', this)">Menú semanal</button>
       <button onclick="mostrarSeccion('compra', this)">Lista de compra</button>
       <button onclick="mostrarSeccion('progreso', this)">Progreso</button>
-      <button onclick="mostrarSeccion('suplementos', this)">Suplementos</button>
       <button onclick="mostrarSeccion('entrenamientos', this)">Entrenamientos</button>
     </nav>
   </aside>
@@ -141,7 +138,6 @@
       </div>
 
       <div class="course-grid premium-modules">
-        <article class="course-card" onclick="mostrarSeccion('plan')"><div class="corner-sun">☀</div><div class="icon">🥗</div><h3>Plan nutricional</h3><p>Calorías, proteínas, carbohidratos y grasas.</p></article>
         <article class="course-card" onclick="mostrarSeccion('menuSemanal')"><div class="corner-sun">☀</div><div class="icon">📅</div><h3>Menú semanal</h3><p>Comidas de lunes a domingo con cantidades.</p></article>
         <article class="course-card" onclick="mostrarSeccion('entrenamientos')"><div class="corner-sun">☀</div><div class="icon">🏋️‍♀️</div><h3>Entrenamientos</h3><p>Rutinas HYROX guardadas y listas para iniciar.</p></article>
         <article class="course-card" onclick="mostrarSeccion('progreso')"><div class="corner-sun">☀</div><div class="icon">📈</div><h3>Progreso</h3><p>Peso, cintura y sensaciones semanales.</p></article>
@@ -173,120 +169,53 @@
       <div id="resultadoPlan" class="notice"></div>
     </section>
 
-
-    <section id="iaNutricional" class="page hidden">
-      <h2>🤖 IA Nutricional VÉRTIKA</h2>
-      <p class="subtitle">Generador inteligente de dieta, macros y lista de compra. Funciona dentro de la app, sin coste extra.</p>
-
-      <div class="ai-hero">
-        <div>
-          <span class="vertika-pill">☀ VÉRTIKA AI NUTRITION</span>
-          <h3>Calcula tu plan personalizado</h3>
-          <p>Introduce tus datos y VÉRTIKA FIT te genera calorías, proteínas, menú diario y compra semanal.</p>
-        </div>
-      </div>
-
-      <div class="ai-grid">
-        <section class="ai-form-card">
-          <h3>Datos personales</h3>
-          <div class="form-grid">
-            <label>Peso actual (kg)<input type="number" id="aiPeso" value="80"></label>
-            <label>Peso objetivo (kg)<input type="number" id="aiObjetivo" value="72"></label>
-            <label>Altura (cm)<input type="number" id="aiAltura" value="172"></label>
-            <label>Edad<input type="number" id="aiEdad" value="39"></label>
-            <label>Cintura (cm)<input type="number" id="aiCintura" value="97"></label>
-            <label>Entrenos/semana<input type="number" id="aiEntrenos" value="4"></label>
-            <label>Horario
-              <select id="aiHorario">
-                <option value="fujitsu">Fujitsu 7:00 - 14:00</option>
-                <option value="normal">Horario normal</option>
-                <option value="tarde">Trabajo de tarde</option>
-              </select>
-            </label>
-            <label>Objetivo
-              <select id="aiObjetivoTipo">
-                <option value="perder">Perder grasa</option>
-                <option value="mantener">Mantener</option>
-                <option value="ganar">Ganar músculo</option>
-              </select>
-            </label>
-            <label>Ayuno intermitente
-              <select id="aiAyuno">
-                <option value="no">No</option>
-                <option value="si">Sí, 16/8</option>
-              </select>
-            </label>
-            <label>Entreno
-              <select id="aiEntrenoTipo">
-                <option value="hyrox">HYROX / fuerza + cardio</option>
-                <option value="fuerza">Fuerza</option>
-                <option value="cardio">Cardio</option>
-              </select>
-            </label>
-          </div>
-
-          <label class="full-label">Alimentos que no te gustan o quieres evitar
-            <input type="text" id="aiEvitar" placeholder="Ej: brócoli, atún, leche...">
-          </label>
-
-          <button onclick="generarPlanIA()">✨ Generar mi dieta VÉRTIKA</button>
-        </section>
-
-        <section class="ai-result-card">
-          <h3>Resultado IA</h3>
-          <div id="aiResultado" class="ai-result-empty">
-            Pulsa el botón para generar tu plan.
-          </div>
-        </section>
-      </div>
-
-      <div id="aiMenuCompra" class="ai-output-grid"></div>
-    </section>
-
-
-    <section id="plan" class="page hidden">
-      <h2>Plan nutricional</h2>
-      <p class="subtitle">Resumen base para pérdida de grasa sin perder rendimiento.</p>
-
-      <div class="table-card">
-        <table>
-          <tr><th>Concepto</th><th>Recomendación</th></tr>
-          <tr><td>Calorías</td><td>Déficit moderado de 350-500 kcal</td></tr>
-          <tr><td>Proteína</td><td>1,6 - 2 g por kg de peso</td></tr>
-          <tr><td>Carbohidratos</td><td>Alrededor del entrenamiento</td></tr>
-          <tr><td>Grasas</td><td>Aceite de oliva, aguacate, frutos secos</td></tr>
-          <tr><td>Agua</td><td>2 - 2,5 litros diarios aproximadamente</td></tr>
-        </table>
-      </div>
-
-      <div class="info-row">
-        <div class="mini-card">
-          <h3>Pre entreno</h3>
-          <p>Fruta + yogur/proteína o una tostada integral si entrenas fuerte.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Post entreno</h3>
-          <p>Proteína + comida completa con carbohidrato y verdura.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="menuSemanal" class="page hidden">
-      <h2>Menú semanal</h2>
-      <p class="subtitle">Selecciona un día para ver las comidas.</p>
+      <h2>📅 Menú semanal</h2>
+      <p class="subtitle">Menús VÉRTIKA en HTML. Cuando quieras una dieta nueva, la convertimos y la subimos a la carpeta <strong>diets/</strong>.</p>
 
-      <div class="day-tabs">
-        <button onclick="mostrarMenu('lunes')">Lunes</button>
-        <button onclick="mostrarMenu('martes')">Martes</button>
-        <button onclick="mostrarMenu('miercoles')">Miércoles</button>
-        <button onclick="mostrarMenu('jueves')">Jueves</button>
-        <button onclick="mostrarMenu('viernes')">Viernes</button>
-        <button onclick="mostrarMenu('sabado')">Sábado</button>
-        <button onclick="mostrarMenu('domingo')">Domingo</button>
+      <div class="diet-hero">
+        <div>
+          <span class="vertika-pill">☀ VÉRTIKA FOOD</span>
+          <h3>Tu menú semanal actual</h3>
+          <p>Organizado de lunes a domingo, con comidas y gramos. Desde aquí puedes abrir el menú completo o ir directamente a la lista de la compra.</p>
+        </div>
       </div>
 
-      <div id="menuDia" class="meal-grid"></div>
+      <div class="course-grid">
+        <article class="course-card">
+          <div class="corner-sun">☀</div>
+          <div class="icon">🥗</div>
+          <h3>Menú semanal actual</h3>
+          <p>Dieta organizada por días, pensada para pérdida de grasa y entrenamiento HYROX.</p>
+          <a class="workout-link-btn" href="diets/menu-semanal-actual.html">▶ Abrir menú</a>
+        </article>
+
+        <article class="course-card">
+          <div class="corner-sun">☀</div>
+          <div class="icon">🛒</div>
+          <h3>Lista de la compra</h3>
+          <p>Compra semanal vinculada al menú actual.</p>
+          <button onclick="mostrarSeccion('compra')">Ver compra</button>
+        </article>
+
+        <article class="course-card future-card">
+          <div class="corner-sun">☀</div>
+          <div class="icon">➕</div>
+          <h3>Nueva dieta</h3>
+          <p>Cuando me mandes otra dieta, la convertimos en HTML y la añadimos aquí.</p>
+          <span class="workout-link-btn disabled">Pendiente</span>
+        </article>
+      </div>
+
+      <div class="notice">
+        <strong>Cómo añadiremos nuevas dietas:</strong><br>
+        1. Me mandas el menú en Word o texto.<br>
+        2. Yo lo convierto en HTML con diseño VÉRTIKA.<br>
+        3. Lo subes dentro de <strong>diets/</strong>.<br>
+        4. Añadimos una tarjeta en esta pantalla.
+      </div>
     </section>
+
 
     <section id="compra" class="page hidden">
       <h2>Lista de la compra semanal</h2>
@@ -395,17 +324,6 @@
         2. Yo la convierto en un archivo HTML.<br>
         3. Lo subes dentro de la carpeta <strong>workouts/</strong>.<br>
         4. Añadimos una tarjeta en esta sección.
-      </div>
-    </section>
-
-
-    <section id="suplementos" class="page hidden">
-      <h2>Suplementos</h2>
-      <div class="course-grid">
-        <article class="course-card"><h3>Creatina</h3><p>5 g al día, todos los días. Mejor con una comida o después de entrenar.</p></article>
-        <article class="course-card"><h3>Proteína whey</h3><p>30 g cuando no llegues a la proteína diaria o al terminar el entreno.</p></article>
-        <article class="course-card"><h3>BCAA + Glutamina</h3><p>Puede ir durante el entreno, aunque la prioridad será la proteína diaria total.</p></article>
-        <article class="course-card"><h3>Quemagrasas</h3><p>No será la base. Lo importante: déficit, fuerza, pasos, sueño y constancia.</p></article>
       </div>
     </section>
 

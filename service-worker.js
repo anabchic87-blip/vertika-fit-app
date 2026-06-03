@@ -1,4 +1,4 @@
-const CACHE_NAME = "vertika-fit-v6-ia-nutricional";
+const CACHE_NAME = "vertika-fit-v6-1-menus-html";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
@@ -13,7 +13,10 @@ const FILES_TO_CACHE = [
   "./js/workout-page.js",
   "./workouts/brazos-hyrox.html",
   "./workouts/pecho-biceps-triceps.html",
-  "./data/workouts.json"
+  "./data/workouts.json",
+  "./css/diet-page.css",
+  "./diets/menu-semanal-actual.html",
+  "./data/diets.json"
 ];
 
 self.addEventListener("install", (event) => {
