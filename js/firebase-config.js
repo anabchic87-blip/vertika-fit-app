@@ -1,5 +1,5 @@
-export const firebaseConfig = {
-  apiKey: "AIzaSyBGzVE8DKu307KRuVtYXXgvonoZwluhbHE",
+const firebaseConfig = {
+  apiKey: "AIzaSyBGzVE8Dku307KRuVtYXXgvonoZwluhbHE",
   authDomain: "vertika-fit.firebaseapp.com",
   projectId: "vertika-fit",
   storageBucket: "vertika-fit.firebasestorage.app",
