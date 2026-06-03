@@ -1,8 +1,10 @@
+// Firebase Config - VERTIKA FIT APP
+
 export const firebaseConfig = {
-  apiKey: "AIzaSyBGzVE8DKu307KRuVtYXXgvonoZwluhbHE",
-  authDomain: "vertika-fit.firebaseapp.com",
-  projectId: "vertika-fit",
-  storageBucket: "vertika-fit.firebasestorage.app",
-  messagingSenderId: "327384929414",
-  appId: "1:327384929414:web:10ae379181d4bd6c116d07"
+  apiKey: "AIzaSyA7rmz0-gabMUv1e7L3oWL9Ui8_fNI8bWg",
+  authDomain: "vertika-fit-app.firebaseapp.com",
+  projectId: "vertika-fit-app",
+  storageBucket: "vertika-fit-app.firebasestorage.app",
+  messagingSenderId: "990118721838",
+  appId: "1:990118721838:web:1c8c36aedb5baa01afe2bf"
 };
