@@ -1,0 +1,2168 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #f26a21;
+  --orange-soft: #ff9658;
+  --purple: #9b7cc7;
+  --purple-dark: #6f4aa0;
+  --lavender: #d8bced;
+  --cream: #fff7ef;
+  --text: #24212a;
+  --muted: #6d6076;
+  --white: #ffffff;
+  --shadow: 0 18px 45px rgba(66, 36, 100, 0.16);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 150, 88, 0.42), transparent 28%),
+    radial-gradient(circle at top right, rgba(155, 124, 199, 0.48), transparent 32%),
+    linear-gradient(135deg, #fdf2e8 0%, #ead6f7 42%, #cfaee7 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "VÉRTIKA";
+  position: fixed;
+  right: -35px;
+  bottom: 35px;
+  font-size: 105px;
+  letter-spacing: 16px;
+  color: rgba(255,255,255,0.20);
+  font-weight: bold;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  padding: 18px;
+  gap: 18px;
+}
+
+.sidebar {
+  width: 285px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.88), rgba(250,240,255,0.80)),
+    linear-gradient(135deg, rgba(242,106,33,0.10), rgba(155,124,199,0.14));
+  border: 1px solid rgba(255,255,255,0.70);
+  border-radius: 30px;
+  padding: 22px;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  bottom: 18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  text-align: center;
+  padding: 14px 8px 22px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,247,239,0.95), rgba(232,211,247,0.92));
+  border: 1px solid rgba(242, 106, 33, 0.18);
+}
+
+.brand img {
+  max-width: 205px;
+  width: 100%;
+  border-radius: 16px;
+  mix-blend-mode: multiply;
+}
+
+.brand p {
+  color: var(--purple-dark);
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 6px 0 0;
+  font-size: 12px;
+}
+
+.menu {
+  margin-top: 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.menu button {
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.70);
+  color: var(--purple-dark);
+  padding: 14px 15px;
+  border-radius: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 8px 18px rgba(80, 45, 120, 0.06);
+}
+
+.menu button:hover,
+.menu button.active {
+  background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+  color: white;
+  transform: translateX(4px);
+}
+
+.content {
+  margin-left: 303px;
+  width: calc(100% - 303px);
+}
+
+.topbar {
+  min-height: 132px;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.92), rgba(255,247,239,0.82), rgba(232,211,247,0.82)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 30px center;
+  background-size: 240px;
+  border: 1px solid rgba(255,255,255,0.74);
+  border-radius: 30px;
+  padding: 26px 30px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  backdrop-filter: blur(10px);
+}
+
+.topbar h1 {
+  color: var(--orange);
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 34px;
+}
+
+.topbar p {
+  color: var(--purple-dark);
+  margin: 6px 0 0;
+  letter-spacing: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.user-chip {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: white;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 10px 24px rgba(111, 74, 160, 0.22);
+}
+
+.page {
+  animation: fadeIn 0.25s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  color: var(--orange);
+  margin-bottom: 4px;
+  font-size: 30px;
+}
+
+.subtitle {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.welcome {
+  min-height: 285px;
+  border-radius: 34px;
+  background:
+    linear-gradient(115deg, rgba(255,247,239,0.92) 0%, rgba(255,247,239,0.76) 45%, rgba(216,188,237,0.44) 100%),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 36px center;
+  background-size: 330px;
+  box-shadow: var(--shadow);
+  padding: 42px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255,255,255,0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(242,106,33,0.14);
+}
+
+.welcome h2 {
+  font-size: 39px;
+  max-width: 620px;
+}
+
+.welcome p {
+  max-width: 560px;
+  font-size: 17px;
+  color: var(--muted);
+}
+
+button {
+  border: none;
+  background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+  color: white;
+  padding: 13px 19px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.stats-grid,
+.course-grid,
+.shopping-grid,
+.info-row {
+  display: grid;
+  gap: 18px;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 22px;
+}
+
+.course-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.shopping-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stat-card,
+.course-card,
+.form-card,
+.table-card,
+.shopping-card,
+.mini-card,
+.meal-card,
+.notice {
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 26px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.stat-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.92), rgba(255,247,239,0.78));
+}
+
+.stat-card span {
+  color: var(--purple-dark);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--orange);
+  margin: 8px 0;
+  font-size: 23px;
+}
+
+.course-card {
+  cursor: pointer;
+  transition: 0.2s;
+  min-height: 170px;
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0.92), rgba(239,224,249,0.86));
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  background:
+    linear-gradient(160deg, rgba(255,247,239,0.98), rgba(232,211,247,0.96));
+}
+
+.icon {
+  font-size: 36px;
+}
+
+.course-card h3,
+.shopping-card h3,
+.mini-card h3,
+.meal-card h3 {
+  color: var(--purple-dark);
+  margin-bottom: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+label {
+  font-weight: bold;
+  color: var(--muted);
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid #e2d2ee;
+  border-radius: 15px;
+  padding: 13px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.92);
+}
+
+.form-card button {
+  margin-top: 18px;
+}
+
+.notice {
+  border-left: 7px solid var(--orange);
+  margin-top: 18px;
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: var(--orange);
+  border-bottom: 2px solid #f2e7db;
+  padding: 14px;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #f0edf3;
+}
+
+.day-tabs {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.day-tabs button {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+}
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.shopping-card label {
+  display: block;
+  background: rgba(255,247,239,0.78);
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 14px;
+  font-weight: normal;
+}
+
+.shopping-card input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline div {
+  background: rgba(255,255,255,0.88);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  column-gap: 14px;
+  border: 1px solid rgba(255,255,255,0.72);
+}
+
+.timeline span {
+  grid-row: span 2;
+  background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.timeline strong {
+  color: var(--purple-dark);
+  font-size: 18px;
+}
+
+.timeline p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 950px) {
+  body::before {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+    padding: 12px;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    margin-bottom: 14px;
+  }
+
+  .menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .menu button {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .stats-grid,
+  .course-grid,
+  .shopping-grid,
+  .info-row,
+  .meal-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    display: block;
+    background-size: 160px;
+    background-position: right 16px bottom 12px;
+  }
+
+  .user-chip {
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .welcome {
+    background-size: 180px;
+    background-position: right 12px bottom 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .welcome {
+    padding: 24px;
+  }
+
+  .welcome h2 {
+    font-size: 27px;
+  }
+
+  .topbar h1 {
+    font-size: 22px;
+  }
+}
+
+
+.install-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 28px));
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(242,106,33,0.28);
+  border-radius: 22px;
+  padding: 14px 16px;
+  box-shadow: 0 18px 45px rgba(66, 36, 100, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.install-banner strong {
+  color: #f26a21;
+}
+
+.install-banner p {
+  margin: 3px 0 0;
+  color: #6d6076;
+  font-size: 13px;
+}
+
+.install-banner button {
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  .install-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .install-banner button {
+    width: 100%;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 4.0 DASHBOARD PREMIUM ===== */
+.premium-hero{position:relative;min-height:330px;border-radius:36px;padding:38px;margin-bottom:22px;overflow:hidden;background:linear-gradient(120deg,rgba(255,247,239,.94),rgba(232,211,247,.88),rgba(255,150,88,.20)),url("../img/logo-vertika.png");background-repeat:no-repeat;background-position:right 34px center;background-size:330px;border:1px solid rgba(255,255,255,.78);box-shadow:var(--shadow)}
+.hero-watermark{position:absolute;right:28px;bottom:-42px;font-size:260px;color:rgba(242,106,33,.10);line-height:1;pointer-events:none}
+.premium-hero-content{position:relative;z-index:2;max-width:680px}
+.vertika-pill{display:inline-flex;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.76);border:1px solid rgba(242,106,33,.22);color:var(--orange);font-weight:900;letter-spacing:.06em;font-size:13px;margin-bottom:16px}
+.premium-hero h2{font-size:42px;color:var(--orange);margin:0 0 8px;line-height:1.05}
+.hero-quote{color:var(--purple-dark);font-weight:800;font-size:18px;margin-bottom:28px}
+.progress-block{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.8);border-radius:24px;padding:18px;max-width:560px;backdrop-filter:blur(10px)}
+.progress-head{display:flex;justify-content:space-between;gap:12px;color:var(--purple-dark);font-weight:800;margin-bottom:12px}
+.progress-head strong{color:var(--orange)}
+.progress-bar,.mini-progress{height:14px;border-radius:999px;background:rgba(155,124,199,.18);overflow:hidden}
+.progress-fill,.mini-progress div{height:100%;border-radius:999px;background:linear-gradient(135deg,var(--orange),var(--orange-soft));transition:width .25s ease}
+.progress-block p{margin:10px 0 0;color:var(--muted);font-weight:700}
+.premium-kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:22px}
+.premium-kpi{position:relative;background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.74);border-radius:26px;padding:20px;box-shadow:var(--shadow);overflow:hidden}
+.premium-kpi::after{content:"☀";position:absolute;top:8px;right:12px;color:rgba(242,106,33,.13);font-size:48px}
+.premium-kpi span{display:block;font-size:30px;margin-bottom:10px}
+.premium-kpi small{display:block;color:var(--purple-dark);font-weight:900;margin-bottom:6px}
+.premium-kpi strong{display:block;color:var(--orange);font-size:28px;line-height:1}
+.premium-kpi em{display:block;margin-top:8px;color:var(--muted);font-size:12px;font-style:normal;font-weight:700}
+.dashboard-premium-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-bottom:22px}
+.mission-card,.streak-card,.training-card,.food-card{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.76);border-radius:28px;padding:22px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+.card-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.card-title-row h3{margin:0 0 4px;color:var(--purple-dark);font-size:22px}
+.card-title-row p{margin:0;color:var(--muted);line-height:1.5}
+.sun-badge,.corner-sun{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(242,106,33,.12);color:var(--orange);font-size:24px;flex:0 0 auto}
+.missions-list{display:grid;gap:10px}
+.missions-list label{display:flex;align-items:center;gap:10px;background:rgba(255,247,239,.80);border:1px solid rgba(242,106,33,.16);padding:13px 14px;border-radius:16px;color:var(--text);cursor:pointer}
+.missions-list input{width:20px;height:20px;margin:0;accent-color:#f26a21}
+.mission-footer{margin-top:16px}
+.mission-footer strong{display:block;color:var(--orange);margin-bottom:10px;font-size:18px}
+.streak-number{display:flex;align-items:baseline;gap:10px;margin:14px 0}
+.streak-number strong{font-size:68px;color:var(--orange);line-height:1}
+.streak-number span{color:var(--purple-dark);font-size:22px;font-weight:900}
+.streak-text{color:var(--muted);font-weight:700}
+.training-card ul{margin:0 0 16px;padding-left:20px;color:var(--muted);line-height:1.8;font-weight:700}
+.food-card p{color:var(--muted);margin:8px 0}.food-card strong{color:var(--orange)}
+.premium-modules .course-card{position:relative}
+.corner-sun{position:absolute;right:16px;top:16px;width:36px;height:36px;font-size:20px}
+@media (max-width:1100px){.premium-kpi-grid{grid-template-columns:repeat(2,1fr)}.dashboard-premium-grid{grid-template-columns:1fr}.premium-hero{background-size:220px}}
+@media (max-width:560px){.premium-hero{padding:24px;min-height:auto;background-size:155px;background-position:right 12px bottom 12px}.premium-hero h2{font-size:30px}.hero-watermark{font-size:150px}.premium-kpi-grid{grid-template-columns:1fr}.progress-head{font-size:12px}.card-title-row{align-items:center}.streak-number strong{font-size:54px}}
+
+
+/* ===== VÉRTIKA FIT 4.1 ENTRENAMIENTOS ===== */
+
+.workout-hero {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 18px;
+  align-items: center;
+  background:
+    linear-gradient(120deg, rgba(255,247,239,0.92), rgba(232,211,247,0.86)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  background-size: 210px;
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 30px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.workout-hero h3 {
+  color: var(--orange);
+  font-size: 32px;
+  margin: 12px 0 6px;
+}
+
+.workout-hero p {
+  color: var(--muted);
+  font-weight: 700;
+  max-width: 620px;
+}
+
+.workout-counter {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(242,106,33,0.18);
+  border-radius: 26px;
+  padding: 22px;
+  text-align: center;
+}
+
+.workout-counter strong {
+  display: block;
+  font-size: 56px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.workout-counter span {
+  color: var(--purple-dark);
+  font-weight: 900;
+}
+
+.workout-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.workout-tab {
+  background: rgba(255,255,255,0.78);
+  color: var(--purple-dark);
+  border: 1px solid rgba(255,255,255,0.76);
+  box-shadow: var(--shadow);
+}
+
+.workout-tab.active {
+  background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+  color: #fff;
+}
+
+.workout-detail {
+  display: grid;
+  gap: 18px;
+}
+
+.workout-main-card {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.76);
+  border-radius: 30px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.workout-main-card h3 {
+  color: var(--orange);
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.workout-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.workout-meta span {
+  background: rgba(255,247,239,0.86);
+  border: 1px solid rgba(242,106,33,0.18);
+  border-radius: 999px;
+  padding: 9px 13px;
+  color: var(--purple-dark);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.workout-block-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.workout-block {
+  background: rgba(255,247,239,0.68);
+  border: 1px solid rgba(242,106,33,0.14);
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.workout-block h4 {
+  color: var(--purple-dark);
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+.exercise-list {
+  display: grid;
+  gap: 9px;
+}
+
+.exercise-list label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255,255,255,0.76);
+  border-radius: 14px;
+  padding: 11px 12px;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.exercise-list input {
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  accent-color: #f26a21;
+  flex: 0 0 auto;
+}
+
+.workout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.workout-progress-text {
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.workout-tip {
+  margin-top: 16px;
+  background: rgba(232,211,247,0.62);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: var(--purple-dark);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .workout-hero,
+  .workout-block-grid {
+    grid-template-columns: 1fr;
+  }
+  .workout-hero {
+    background-size: 160px;
+    background-position: right 10px bottom 10px;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 5.0 ESTRUCTURA PROFESIONAL ===== */
+.workout-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+  color: white;
+  font-weight: 900;
+}
+
+.workout-link-btn.disabled {
+  background: rgba(155,124,199,.22);
+  color: var(--purple-dark);
+}
+
+.future-card {
+  opacity: .92;
+}
+
+
+/* ===== VÉRTIKA FIT 6.2 TRANSFORMACIÓN ===== */
+.transformation-hero {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 18px;
+  align-items: center;
+  background:
+    linear-gradient(120deg, rgba(255,247,239,.92), rgba(232,211,247,.86)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  background-size: 220px;
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.transformation-hero h3 {
+  color: var(--orange);
+  font-size: 34px;
+  margin: 12px 0 6px;
+}
+
+.transformation-hero p {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.transformation-badge {
+  background: rgba(255,255,255,.84);
+  border: 1px solid rgba(242,106,33,.20);
+  border-radius: 26px;
+  padding: 22px;
+  text-align: center;
+}
+
+.transformation-badge strong {
+  display: block;
+  color: var(--orange);
+  font-size: 54px;
+  line-height: 1;
+}
+
+.transformation-badge span {
+  color: var(--purple-dark);
+  font-weight: 900;
+}
+
+.transformation-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.transformation-kpis article,
+.transformation-card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.transformation-kpis span {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.transformation-kpis small {
+  display: block;
+  color: var(--purple-dark);
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.transformation-kpis strong {
+  display: block;
+  color: var(--orange);
+  font-size: 28px;
+}
+
+.transformation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.transformation-card h3 {
+  color: var(--purple-dark);
+  margin-top: 0;
+}
+
+.transform-scale {
+  background: rgba(255,247,239,.76);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.scale-head {
+  display: flex;
+  justify-content: space-between;
+  color: var(--purple-dark);
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.scale-head strong {
+  color: var(--orange);
+}
+
+#transformMessage {
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.transform-history {
+  display: grid;
+  gap: 10px;
+}
+
+.transform-item {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, auto);
+  gap: 10px;
+  align-items: center;
+  background: rgba(255,247,239,.78);
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.transform-item strong {
+  color: var(--orange);
+}
+
+@media (max-width: 950px) {
+  .transformation-hero,
+  .transformation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transformation-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transformation-hero {
+    background-size: 160px;
+    background-position: right 10px bottom 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .transformation-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .transform-item {
+    grid-template-columns: 1fr;
+  }
+
+  .transformation-hero h3 {
+    font-size: 28px;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 7.0 FIREBASE BASE ===== */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(242,106,33,.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(155,124,199,.28), transparent 28%),
+    linear-gradient(135deg, #fff7ef, #ead3f7);
+}
+
+.auth-card {
+  width: min(560px, 100%);
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 32px;
+  padding: 30px;
+  box-shadow: 0 22px 55px rgba(66,36,100,.18);
+  text-align: center;
+}
+
+.auth-logo {
+  width: 180px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+}
+
+.brand-mini h1 {
+  color: var(--orange);
+  margin: 14px 0 8px;
+  font-size: 34px;
+}
+
+.brand-mini p {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.auth-tab {
+  flex: 1;
+  background: rgba(255,247,239,.86);
+  color: var(--purple-dark);
+}
+
+.auth-tab.active {
+  background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+  color: #fff;
+}
+
+.auth-panel {
+  display: none;
+  text-align: left;
+}
+
+.auth-panel.active {
+  display: block;
+}
+
+.auth-panel label {
+  display: block;
+  margin-bottom: 13px;
+}
+
+.auth-message {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-weight: 800;
+  display: none;
+}
+
+.auth-message.ok {
+  display: block;
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.auth-message.bad {
+  display: block;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.auth-help,
+.firebase-note {
+  margin-top: 14px;
+  background: rgba(255,247,239,.82);
+  border: 1px solid rgba(242,106,33,.18);
+  color: var(--purple-dark);
+  border-radius: 18px;
+  padding: 13px 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.logout-vertika {
+  margin-left: 10px;
+  padding: 10px 14px;
+}
+
+.layout {
+  display: none;
+}
+
+
+/* ===== VÉRTIKA FIT 8.0 LOGIN SOLO LOGO ===== */
+.auth-screen {
+  background:
+    radial-gradient(circle at top left, rgba(242,106,33,.10), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(155,124,199,.14), transparent 30%),
+    linear-gradient(135deg, #fffaf5, #f2e5fb);
+}
+
+.auth-card {
+  width: min(520px, 100%);
+  text-align: center;
+  padding: 34px 30px;
+}
+
+.auth-logo {
+  width: 240px;
+  max-width: 82%;
+  margin: 0 auto 24px;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(66,36,100,.10);
+}
+
+.auth-tabs {
+  margin-top: 8px;
+}
+
+.auth-panel label {
+  text-align: left;
+}
+
+.auth-panel button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.auth-message {
+  margin-top: 14px;
+}
+
+
+/* ===== VÉRTIKA FIT 9.0 LOGIN + MARCA DE AGUA ===== */
+
+/* Marca de agua general */
+.vertika-bg-watermark {
+  position: fixed;
+  right: clamp(16px, 6vw, 86px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  font-size: clamp(72px, 15vw, 178px);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  color: rgba(255,255,255,0.34);
+  text-shadow: 0 8px 30px rgba(111,74,160,0.08);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.app-watermark {
+  display: none;
+}
+
+/* Fondo del login como el diseño de referencia */
+.auth-screen {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,142,79,0.34), transparent 32%),
+    radial-gradient(circle at 100% 100%, rgba(155,124,199,0.38), transparent 35%),
+    linear-gradient(135deg, #fff4ed 0%, #f4e6f8 48%, #d8b8ef 100%);
+}
+
+.auth-screen::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(255,255,255,0.34), transparent 30%),
+    linear-gradient(90deg, rgba(255,255,255,0.14), rgba(255,255,255,0.0));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 94vw);
+  padding: 32px 30px 34px;
+  border-radius: 32px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.82);
+  box-shadow: 0 28px 80px rgba(66,36,100,0.18);
+  backdrop-filter: blur(18px);
+}
+
+.auth-logo {
+  width: 225px;
+  max-width: 78%;
+  margin: 0 auto 24px;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(66,36,100,0.10);
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.auth-tab {
+  border-radius: 999px;
+  padding: 13px 14px;
+  font-weight: 900;
+  background: rgba(255,247,239,0.86);
+  color: var(--purple-dark);
+}
+
+.auth-tab.active {
+  background: linear-gradient(135deg, #ff5a08, #ff8847);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(242,106,33,0.22);
+}
+
+.auth-panel label {
+  color: var(--purple-dark);
+  font-size: 16px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.auth-panel input {
+  border-radius: 16px;
+  border: 1px solid rgba(155,124,199,0.28);
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.92);
+}
+
+.auth-panel button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5a08, #ff8847);
+  box-shadow: 0 12px 24px rgba(242,106,33,0.20);
+}
+
+/* Cuando ya estás dentro de la app, la marca de agua también aparece completa */
+body:has(.layout[style*="flex"]) .login-watermark {
+  display: none;
+}
+
+body:has(.layout[style*="flex"]) .app-watermark {
+  display: block;
+  opacity: 0.76;
+  right: clamp(10px, 3.5vw, 55px);
+  font-size: clamp(64px, 12vw, 145px);
+}
+
+/* Mejoras del fondo del index para integrar la misma marca */
+.layout {
+  position: relative;
+  z-index: 2;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 150, 88, 0.40), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(155, 124, 199, 0.42), transparent 32%),
+    linear-gradient(135deg, #fdf2e8 0%, #ead6f7 42%, #cfaee7 100%);
+}
+
+@media (max-width: 760px) {
+  .vertika-bg-watermark {
+    right: -22px;
+    font-size: clamp(62px, 26vw, 120px);
+    color: rgba(255,255,255,0.24);
+  }
+
+  .auth-card {
+    padding: 26px 20px 28px;
+  }
+
+  .auth-logo {
+    width: 205px;
+    max-width: 84%;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 9.1 VISUAL DEFINITIVA ===== */
+
+/* Anula y mejora la marca de agua anterior */
+.vertika-bg-watermark {
+  position: fixed !important;
+  top: 50% !important;
+  right: -120px !important;
+  transform: translateY(-50%) rotate(-90deg) !important;
+  transform-origin: center !important;
+
+  width: 1200px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+
+  font-size: clamp(105px, 15vw, 210px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1 !important;
+
+  color: rgba(255,255,255,0.26) !important;
+  text-shadow: 0 10px 38px rgba(111,74,160,0.10) !important;
+
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 0 !important;
+}
+
+/* Sol integrado como marca de agua */
+.vertika-sun-watermark {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  line-height: 1;
+  color: rgba(242,106,33,0.10);
+  text-shadow: 0 18px 44px rgba(242,106,33,0.10);
+}
+
+.login-sun {
+  right: clamp(40px, 10vw, 170px);
+  top: 18%;
+  font-size: clamp(110px, 14vw, 230px);
+}
+
+.app-sun {
+  display: none;
+  right: clamp(30px, 8vw, 130px);
+  bottom: 8%;
+  font-size: clamp(120px, 16vw, 250px);
+}
+
+/* Login premium definitivo */
+.auth-screen {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,150,88,0.36), transparent 34%),
+    radial-gradient(circle at 100% 100%, rgba(155,124,199,0.42), transparent 38%),
+    radial-gradient(circle at 55% 48%, rgba(255,255,255,0.35), transparent 32%),
+    linear-gradient(135deg, #fff3ec 0%, #f5e6f8 48%, #d7b8ef 100%) !important;
+}
+
+.auth-card {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(520px, 94vw) !important;
+  padding: 34px 30px 36px !important;
+  border-radius: 34px !important;
+  background: rgba(255,255,255,0.94) !important;
+  border: 1px solid rgba(255,255,255,0.86) !important;
+  box-shadow: 0 30px 90px rgba(66,36,100,0.20) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.auth-logo {
+  width: 240px !important;
+  max-width: 82% !important;
+  margin: 0 auto 26px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 32px rgba(66,36,100,0.11) !important;
+}
+
+.auth-tabs {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin: 0 0 22px !important;
+}
+
+.auth-tab {
+  border-radius: 999px !important;
+  padding: 14px 14px !important;
+  font-weight: 900 !important;
+}
+
+.auth-tab.active,
+.auth-panel button {
+  background: linear-gradient(135deg, #ff5a08, #ff8847) !important;
+  box-shadow: 0 12px 26px rgba(242,106,33,0.22) !important;
+}
+
+/* Campus principal con mismo efecto */
+body:has(.layout[style*="flex"]) .login-watermark,
+body:has(.layout[style*="flex"]) .login-sun {
+  display: none !important;
+}
+
+body:has(.layout[style*="flex"]) .app-watermark {
+  display: block !important;
+  right: -145px !important;
+  width: 1180px !important;
+  font-size: clamp(95px, 13vw, 185px) !important;
+  color: rgba(255,255,255,0.20) !important;
+}
+
+body:has(.layout[style*="flex"]) .app-sun {
+  display: block !important;
+}
+
+.layout {
+  position: relative;
+  z-index: 3;
+}
+
+/* Ajuste responsive */
+@media (max-width: 900px) {
+  .vertika-bg-watermark {
+    right: -230px !important;
+    width: 1000px !important;
+    font-size: clamp(78px, 21vw, 145px) !important;
+    letter-spacing: 0.12em !important;
+    color: rgba(255,255,255,0.20) !important;
+  }
+
+  .login-sun {
+    right: -10px;
+    top: 12%;
+    font-size: 145px;
+  }
+
+  .app-sun {
+    right: -20px;
+    bottom: 5%;
+    font-size: 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .auth-screen {
+    padding: 18px;
+    align-items: center;
+  }
+
+  .auth-card {
+    padding: 28px 20px 30px !important;
+    border-radius: 28px !important;
+  }
+
+  .auth-logo {
+    width: 215px !important;
+    max-width: 86% !important;
+  }
+
+  .vertika-bg-watermark {
+    right: -300px !important;
+    width: 920px !important;
+    font-size: 88px !important;
+    letter-spacing: 0.10em !important;
+    color: rgba(255,255,255,0.18) !important;
+  }
+
+  .login-sun {
+    right: -30px;
+    top: 8%;
+    font-size: 120px;
+    color: rgba(242,106,33,0.08);
+  }
+
+  .auth-tabs {
+    gap: 8px !important;
+  }
+
+  .auth-tab {
+    font-size: 12px;
+    padding: 12px 10px !important;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 9.2 FIX MARCA DE AGUA VISIBLE ===== */
+
+/* Reset definitivo: usar texto vertical real, no rotación */
+.vertika-bg-watermark {
+  position: fixed !important;
+  top: 50% !important;
+  right: clamp(18px, 5vw, 76px) !important;
+  transform: translateY(-50%) !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+
+  font-size: clamp(82px, 9vw, 150px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 0.95 !important;
+
+  color: rgba(255,255,255,0.30) !important;
+  opacity: 1 !important;
+  text-shadow: 0 14px 40px rgba(111,74,160,0.12) !important;
+
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 1 !important;
+}
+
+/* El login siempre por encima */
+.auth-screen {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.auth-card {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Sol de fondo */
+.vertika-sun-watermark {
+  position: fixed !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 1 !important;
+  color: rgba(242,106,33,0.09) !important;
+  line-height: 1 !important;
+}
+
+.login-sun {
+  right: clamp(50px, 12vw, 190px) !important;
+  top: 15% !important;
+  font-size: clamp(110px, 15vw, 230px) !important;
+}
+
+/* En app/campus */
+.app-watermark,
+.app-sun {
+  display: none;
+}
+
+body:has(.layout[style*="flex"]) .login-watermark,
+body:has(.layout[style*="flex"]) .login-sun {
+  display: none !important;
+}
+
+body:has(.layout[style*="flex"]) .app-watermark {
+  display: block !important;
+  right: clamp(10px, 3vw, 45px) !important;
+  font-size: clamp(76px, 8vw, 135px) !important;
+  color: rgba(255,255,255,0.22) !important;
+  z-index: 1 !important;
+}
+
+body:has(.layout[style*="flex"]) .app-sun {
+  display: block !important;
+  right: clamp(20px, 7vw, 120px) !important;
+  bottom: 8% !important;
+  top: auto !important;
+  font-size: clamp(110px, 14vw, 220px) !important;
+}
+
+/* Compatibilidad si :has no funciona: la marca login se ve igual y no molesta */
+.layout {
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+.install-banner {
+  z-index: 9999 !important;
+}
+
+/* Móvil */
+@media (max-width: 760px) {
+  .vertika-bg-watermark {
+    right: -4px !important;
+    font-size: clamp(58px, 18vw, 98px) !important;
+    letter-spacing: 0.08em !important;
+    color: rgba(255,255,255,0.22) !important;
+  }
+
+  .login-sun {
+    right: -15px !important;
+    top: 9% !important;
+    font-size: 120px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .vertika-bg-watermark {
+    right: -18px !important;
+    font-size: 60px !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .auth-card {
+    width: min(94vw, 420px) !important;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 10.0 CAMPUS PREMIUM ===== */
+.home-premium-hero {
+  position: relative;
+  min-height: 410px;
+  border-radius: 38px;
+  padding: 42px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background:
+    linear-gradient(125deg, rgba(255,247,239,.94), rgba(239,220,250,.86), rgba(255,150,88,.24)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 34px center;
+  background-size: 330px;
+  border: 1px solid rgba(255,255,255,.78);
+  box-shadow: 0 30px 90px rgba(66,36,100,.16);
+  backdrop-filter: blur(14px);
+}
+
+.home-sun-bg {
+  position: absolute;
+  right: 30px;
+  bottom: -70px;
+  font-size: 330px;
+  color: rgba(242,106,33,.10);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.home-pill {
+  display: inline-flex;
+  padding: 11px 17px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(242,106,33,.20);
+  color: var(--orange);
+  font-weight: 900;
+  letter-spacing: .08em;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.home-premium-hero h2 {
+  color: var(--orange);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+  margin: 0 0 10px;
+}
+
+.home-mantra {
+  color: var(--purple-dark);
+  letter-spacing: .18em;
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.home-subtitle {
+  color: var(--muted);
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 28px;
+}
+
+.home-progress-card {
+  background: rgba(255,255,255,.76);
+  border: 1px solid rgba(255,255,255,.84);
+  border-radius: 26px;
+  padding: 20px;
+  max-width: 650px;
+  box-shadow: 0 18px 48px rgba(66,36,100,.10);
+}
+
+.home-progress-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.home-progress-top small {
+  display: block;
+  color: var(--purple-dark);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.home-progress-top strong {
+  display: block;
+  color: var(--orange);
+  font-size: 28px;
+  margin-top: 4px;
+}
+
+.home-progress-card p {
+  color: var(--muted);
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.home-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.home-quick-card {
+  position: relative;
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 28px;
+  padding: 22px;
+  min-height: 185px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: .22s ease;
+  overflow: hidden;
+}
+
+.home-quick-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 58px rgba(66,36,100,.18);
+}
+
+.home-quick-card.primary {
+  background: linear-gradient(145deg, rgba(255,247,239,.94), rgba(238,220,250,.90));
+}
+
+.home-quick-card span {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.home-quick-card h3 {
+  color: var(--purple-dark);
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.home-quick-card p {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+}
+
+.home-today-card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.today-box {
+  background: rgba(255,247,239,.78);
+  border-radius: 20px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.today-box h4 {
+  color: var(--orange);
+  margin: 0 0 8px;
+}
+
+.today-box p {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.today-box strong {
+  color: var(--purple-dark);
+}
+
+@media (max-width: 1100px) {
+  .home-quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-premium-hero {
+    min-height: auto;
+    padding: 26px;
+    background-size: 170px;
+    background-position: right 12px bottom 12px;
+  }
+
+  .home-sun-bg {
+    font-size: 185px;
+    right: -20px;
+    bottom: -40px;
+  }
+
+  .home-progress-top,
+  .home-quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-mantra {
+    font-size: 12px;
+  }
+
+  .home-subtitle {
+    font-size: 16px;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 11 FIREBASE EDITION ===== */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,150,88,0.36), transparent 34%),
+    radial-gradient(circle at 100% 100%, rgba(155,124,199,0.42), transparent 38%),
+    radial-gradient(circle at 55% 48%, rgba(255,255,255,0.35), transparent 32%),
+    linear-gradient(135deg, #fff3ec 0%, #f5e6f8 48%, #d7b8ef 100%);
+}
+
+.auth-card {
+  position: relative;
+  z-index: 5;
+  width: min(520px, 94vw);
+  padding: 34px 30px 36px;
+  border-radius: 34px;
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(255,255,255,0.86);
+  box-shadow: 0 30px 90px rgba(66,36,100,0.20);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+.auth-logo {
+  width: 240px;
+  max-width: 82%;
+  margin: 0 auto 26px;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(66,36,100,0.11);
+  display: block;
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 0 22px;
+}
+
+.auth-tab {
+  border-radius: 999px;
+  padding: 14px;
+  font-weight: 900;
+  background: rgba(255,247,239,.86);
+  color: var(--purple-dark);
+}
+
+.auth-tab.active {
+  background: linear-gradient(135deg, #ff5a08, #ff8847);
+  color: #fff;
+}
+
+.auth-panel { display: none; text-align: left; }
+.auth-panel.active { display: block; }
+.auth-panel label { display: block; margin-bottom: 14px; color: var(--purple-dark); font-weight: 900; }
+.auth-panel input {
+  border-radius: 16px;
+  border: 1px solid rgba(155,124,199,0.28);
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.92);
+}
+.auth-panel button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5a08, #ff8847);
+}
+
+.auth-message {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-weight: 800;
+  display: none;
+}
+
+.auth-message.ok { display: block; background: #dcfce7; color: #15803d; }
+.auth-message.bad { display: block; background: #fee2e2; color: #b91c1c; }
+
+.logout-vertika {
+  margin-left: 10px;
+  padding: 10px 14px;
+}
+
+.layout {
+  display: none;
+}
+
+
+/* ===== VÉRTIKA FIT 14 FULL EDITION ===== */
+.profile-hero,
+.library-hero {
+  background:
+    linear-gradient(120deg, rgba(255,247,239,.92), rgba(232,211,247,.86)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+  background-size: 230px;
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 30px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.profile-hero h3,
+.library-hero h3 {
+  color: var(--orange);
+  font-size: 32px;
+  margin: 12px 0 6px;
+}
+
+.profile-hero p,
+.library-hero p {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.profile-card {
+  margin-bottom: 18px;
+}
+
+.charts-grid,
+.library-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.chart-box {
+  background: rgba(255,247,239,.72);
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.chart-box h4 {
+  margin: 0 0 10px;
+  color: var(--orange);
+}
+
+.library-card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.library-card h3 {
+  color: var(--purple-dark);
+  margin-top: 0;
+}
+
+.library-list {
+  display: grid;
+  gap: 12px;
+}
+
+.library-item {
+  display: block;
+  text-decoration: none;
+  background: rgba(255,247,239,.80);
+  border: 1px solid rgba(242,106,33,.14);
+  color: var(--muted);
+  padding: 14px 16px;
+  border-radius: 18px;
+  font-weight: 800;
+}
+
+.library-item strong {
+  display: block;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+
+.library-item span {
+  color: var(--purple-dark);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .charts-grid,
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-hero,
+  .library-hero {
+    background-size: 150px;
+    background-position: right 10px bottom 10px;
+  }
+}
+
+
+/* ===== VÉRTIKA FIT 15 SMART + CONTENT MANAGER ===== */
+.smart-dashboard-panel,
+.manager-hero,
+.manager-card {
+  background: rgba(255,255,255,.88);
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 30px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+
+.smart-dashboard-panel {
+  background:
+    linear-gradient(120deg, rgba(255,247,239,.90), rgba(232,211,247,.82));
+}
+
+.smart-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.smart-title h3,
+.manager-hero h3,
+.manager-card h3 {
+  color: var(--orange);
+  margin: 10px 0 4px;
+  font-size: 28px;
+}
+
+.smart-title p,
+.manager-hero p {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.smart-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.smart-grid article {
+  background: rgba(255,255,255,.76);
+  border-radius: 22px;
+  padding: 18px;
+  border: 1px solid rgba(242,106,33,.12);
+}
+
+.smart-grid small {
+  color: var(--purple-dark);
+  font-weight: 900;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.smart-grid strong {
+  color: var(--orange);
+  font-size: 26px;
+  display: block;
+  line-height: 1.1;
+}
+
+.smart-grid span {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.manager-hero {
+  background:
+    linear-gradient(120deg, rgba(255,247,239,.92), rgba(232,211,247,.86)),
+    url("../img/logo-vertika.png");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+  background-size: 230px;
+}
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+}
+
+.manager-list {
+  display: grid;
+  gap: 10px;
+}
+
+.manager-item {
+  background: rgba(255,247,239,.80);
+  border-radius: 16px;
+  padding: 13px 14px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.manager-item strong {
+  display: block;
+  color: var(--orange);
+}
+
+.manager-item a {
+  color: var(--purple-dark);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+@media (max-width: 950px) {
+  .smart-grid,
+  .manager-grid {
+    grid-template-columns: 1fr;
+  }
+  .manager-hero {
+    background-size: 150px;
+    background-position: right 10px bottom 10px;
+  }
+}

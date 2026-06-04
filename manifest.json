@@ -1,0 +1,23 @@
+{
+  "name": "VÉRTIKA FIT 19",
+  "short_name": "VÉRTIKA",
+  "description": "MOVE. TRAIN. PROGRESS. Versión limpia sin Firebase.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6e9ff",
+  "theme_color": "#5b19a8",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
