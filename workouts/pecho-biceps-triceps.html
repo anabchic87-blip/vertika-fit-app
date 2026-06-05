@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pecho · Bíceps · Tríceps · VÉRTIKA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app content-page">
+<header class="app-header">
+<div><small>VÉRTIKA TRAIN</small><h2>Pecho · Bíceps · Tríceps</h2></div>
+<a class="back-btn" href="../index.html">Volver</a>
+</header>
+<section class="card">
+<h3>Rutina 60 min</h3>
+<ul class="content-list">
+<li>Calentamiento: 5-8 min cinta o remo.</li>
+<li>Press banca: 4 x 10.</li>
+<li>Press inclinado con mancuernas: 4 x 12.</li>
+<li>Aperturas: 3 x 12.</li>
+<li>Curl bíceps: 3 x 12.</li>
+<li>Curl martillo: 3 x 12.</li>
+<li>Tríceps cuerda: 3 x 15.</li>
+<li>Final HYROX: remo + farmer carry + wall balls.</li>
+</ul>
+<button onclick="marcar()">Marcar entrenamiento completado</button>
+</section>
+</div>
+<script>
+function marcar(){
+ const hoy=new Date().toISOString().slice(0,10);
+ const data=JSON.parse(localStorage.getItem("vertikaEntrenos21")||"{}");
+ data[hoy]="pecho-biceps-triceps";
+ localStorage.setItem("vertikaEntrenos21",JSON.stringify(data));
+ alert("Entrenamiento guardado ✅");
+}
+</script>
+</body>
+</html>

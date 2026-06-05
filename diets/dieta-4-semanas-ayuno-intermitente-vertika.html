@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieta 4 semanas ayuno intermitente · VÉRTIKA</title>
+  <style>
+    :root{
+      --purple:#5b19a8;
+      --purple2:#8d35e8;
+      --orange:#ff6a00;
+      --bg:#f7ecff;
+      --text:#241d2e;
+      --muted:#74627d;
+      --card:rgba(255,255,255,.88);
+      --shadow:0 18px 45px rgba(91,25,168,.15);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 0 0,rgba(255,106,0,.16),transparent 30%),
+        radial-gradient(circle at 100% 15%,rgba(141,53,232,.22),transparent 35%),
+        linear-gradient(135deg,#fff8f2,#f6e9ff 48%,#ead5ff);
+      min-height:100vh;
+    }
+    .app{max-width:900px;margin:0 auto;padding:16px 16px 90px}
+    .header{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.9);
+      box-shadow:var(--shadow);
+      border-radius:28px;
+      padding:20px;
+      margin-bottom:14px;
+    }
+    .pill{
+      display:inline-block;
+      background:rgba(255,106,0,.13);
+      color:var(--orange);
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:1px;
+    }
+    h1{color:var(--purple);margin:12px 0 4px;font-size:32px}
+    h2{color:var(--purple);margin-top:0}
+    h3{color:var(--purple)}
+    p{color:var(--muted);font-weight:700;line-height:1.5}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.9);
+      box-shadow:var(--shadow);
+      border-radius:26px;
+      padding:18px;
+      margin:14px 0;
+    }
+    .tabs,.days{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding-bottom:8px;
+      margin:12px 0;
+    }
+    button{
+      border:0;
+      background:linear-gradient(135deg,var(--purple),var(--purple2));
+      color:#fff;
+      border-radius:16px;
+      padding:12px 14px;
+      font-weight:900;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    button.secondary{
+      background:rgba(91,25,168,.10);
+      color:var(--purple);
+    }
+    button.active{
+      background:linear-gradient(135deg,var(--orange),#ff9b21);
+      color:#fff;
+    }
+    label{
+      display:block;
+      background:#fff;
+      border-radius:16px;
+      padding:12px;
+      margin:9px 0;
+      color:var(--muted);
+      font-weight:800;
+      line-height:1.4;
+    }
+    input[type="checkbox"]{width:auto;margin-right:8px;transform:scale(1.15)}
+    input,select{
+      width:100%;
+      border:1px solid rgba(91,25,168,.18);
+      border-radius:16px;
+      padding:13px;
+      font-size:16px;
+      margin-top:8px;
+      background:#fff;
+    }
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .shopping-list{display:grid;gap:8px}
+    .summary{
+      background:rgba(255,106,0,.10);
+      border-left:6px solid var(--orange);
+    }
+    .history{
+      color:var(--muted);
+      font-weight:800;
+      line-height:1.7;
+    }
+    .back{
+      display:inline-block;
+      text-decoration:none;
+      background:rgba(91,25,168,.10);
+      color:var(--purple);
+      padding:11px 14px;
+      border-radius:16px;
+      font-weight:900;
+      margin-top:8px;
+    }
+    @media(max-width:700px){
+      .app{padding:10px 10px 80px}
+      h1{font-size:26px}
+      .grid{grid-template-columns:1fr}
+      .card{padding:15px;border-radius:22px}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <span class="pill">VÉRTIKA · MOVE · TRAIN · PROGRESS</span>
+    <h1>Dieta interactiva 4 semanas · Ayuno intermitente</h1>
+    <p>Objetivo: bajar peso y reducir cintura partiendo de 80 kg y 97 cm de abdomen, entrenando 4 días por semana y usando ayuno intermitente con ventana de comida de 10:00 a 20:00.</p>
+    <a class="back" href="../index.html">← Volver a VÉRTIKA</a>
+  </header>
+
+  <section class="card summary">
+    <h2>Objetivo diario</h2>
+    <p><strong>Calorías:</strong> 1.800-1.900 kcal aprox.</p>
+    <p><strong>Proteína:</strong> 140-150 g/día.</p>
+    <p><strong>Meta realista:</strong> perder 2-3 kg en 4 semanas y bajar centímetros de cintura.</p><p><strong>Horario:</strong> 10:00 primera comida · 14:30 comida · entrenamiento · 17:00 post-entreno · 20:00 cena.</p>
+  </section>
+
+
+  <section class="card">
+    <h2>Horario de ayuno intermitente</h2>
+    <p><strong>Ayuno:</strong> desde las 20:00 hasta las 10:00.</p>
+    <p><strong>10:00:</strong> primera comida alta en proteína.</p>
+    <p><strong>14:30:</strong> comida principal antes de entrenar.</p>
+    <p><strong>17:00:</strong> post-entreno con proteína y creatina.</p>
+    <p><strong>20:00:</strong> cena ligera y cierre de ventana de comida.</p>
+  </section>
+
+  <section class="card">
+    <h2>Seguimiento semanal</h2>
+    <div class="grid">
+      <label>Semana
+        <select id="pesoSemana">
+          <option value="1">Semana 1</option>
+          <option value="2">Semana 2</option>
+          <option value="3">Semana 3</option>
+          <option value="4">Semana 4</option>
+        </select>
+      </label>
+      <label>Peso actual
+        <input id="pesoValor" type="number" step="0.1" placeholder="Ej: 79.4">
+      </label>
+      <label>Cintura actual
+        <input id="cinturaValor" type="number" step="0.1" placeholder="Ej: 96">
+      </label>
+    </div>
+    <button onclick="guardarPesoSemanal()">Guardar peso/cintura</button>
+    <div id="pesoResumen" class="history"></div>
+  </section>
+
+  <section class="card">
+    <h2>Lista de compra automática</h2>
+    <div id="shoppingList" class="shopping-list"></div>
+  </section>
+
+  <section class="card">
+    <h2>Plan de comidas</h2>
+    <div id="weekTabs" class="tabs"></div>
+    <div id="daysContainer"></div>
+  </section>
+</div>
+
+<script>
+const dieta = [
+  {
+    week:1,title:"Semana 1 · Ayuno intermitente · Inicio controlado",
+    days:{
+      "Lunes":["10:00 · Yogur griego 0% 250 g + avena 40 g + frutos rojos 100 g","14:30 · Pollo 160 g + arroz cocido 150 g + verduras 250 g","17:00 · Post-entreno: whey 30 g + plátano + creatina 5 g","20:00 · Merluza 180 g + patata cocida 200 g + ensalada"],
+      "Martes":["10:00 · 2 huevos + claras 150 g + tostada integral","14:30 · Pavo 160 g + boniato 250 g + verduras","17:00 · Post-entreno: queso fresco batido 250 g + fruta","20:00 · Salmón 150 g + verduras salteadas 300 g"],
+      "Miércoles":["10:00 · Yogur griego 0% 250 g + avena 40 g + kiwi","14:30 · Ternera magra 150 g + patata 250 g + ensalada","17:00 · Post-entreno: whey 30 g + fruta + creatina 5 g","20:00 · Tortilla 2 huevos + claras 200 g + verduras"],
+      "Jueves":["10:00 · Avena 45 g + proteína 25 g + leche o bebida vegetal","14:30 · Pollo 150 g + pasta cocida 150 g + verduras","17:00 · Post-entreno: yogur proteico + plátano","20:00 · Pescado blanco 180 g + crema de verduras + patata 150 g"],
+      "Viernes":["10:00 · Tostada integral 60 g + aguacate 40 g + huevo","14:30 · Pavo 150 g + arroz cocido 150 g + ensalada","17:00 · Post-entreno: queso fresco batido 250 g + frutos rojos","20:00 · Pollo 130 g + verduras + boniato 180 g"],
+      "Sábado":["10:00 · Avena 40 g + yogur + fruta","14:30 · Comida flexible: proteína 150 g + patata/arroz + ensalada","17:00 · Proteína 30 g o yogur alto en proteína","20:00 · Cena ligera: tortilla + ensalada"],
+      "Domingo":["10:00 · Tostada integral + huevo + fruta","14:30 · Comida familiar controlada: proteína + verdura","17:00 · Yogur o fruta","20:00 · Pescado blanco o tortilla + verduras"]
+    }
+  },
+  {
+    week:2,title:"Semana 2 · Ayuno intermitente · Más proteína y energía",
+    days:{
+      "Lunes":["10:00 · 2 huevos + claras 150 g + pan integral 50 g","14:30 · Pavo 160 g + boniato 250 g + verduras","17:00 · Post-entreno: whey 30 g + plátano + creatina 5 g","20:00 · Salmón 150 g + ensalada grande"],
+      "Martes":["10:00 · Yogur griego 250 g + avena 45 g + manzana","14:30 · Pollo 160 g + arroz 150 g + verduras","17:00 · Queso fresco batido 250 g","20:00 · Merluza 180 g + patata 200 g + ensalada"],
+      "Miércoles":["10:00 · Tortitas: avena 40 g + 1 huevo + claras","14:30 · Ternera magra 150 g + patata 250 g","17:00 · Post-entreno: whey 30 g + kiwi + creatina 5 g","20:00 · Tortilla + verduras"],
+      "Jueves":["10:00 · Yogur + fruta + avena 35 g + almendras 15 g","14:30 · Pollo 150 g + pasta 150 g + ensalada","17:00 · Yogur proteico + fruta","20:00 · Pescado blanco 180 g + verduras"],
+      "Viernes":["10:00 · Tostada + huevo + tomate + plátano","14:30 · Pavo 150 g + arroz 150 g + verduras","17:00 · Queso fresco batido 250 g","20:00 · Pollo 140 g + boniato 180 g"],
+      "Sábado":["10:00 · Avena + yogur + fruta","14:30 · Comida flexible controlada con proteína y verdura","17:00 · Proteína o yogur","20:00 · Cena ligera rica en proteína"],
+      "Domingo":["10:00 · Tostada integral + huevo","14:30 · Comida familiar controlada","17:00 · Yogur o fruta","20:00 · Pescado o tortilla + verduras"]
+    }
+  },
+  {
+    week:3,title:"Semana 3 · Ayuno intermitente · Ajuste de cintura",
+    days:{
+      "Lunes":["10:00 · Yogur griego 250 g + avena 50 g + canela","14:30 · Ternera magra 150 g + patata 250 g + ensalada","17:00 · Queso fresco batido 250 g + kiwi","20:00 · Tortilla 2 huevos + claras 200 g + verduras"],
+      "Martes":["10:00 · Avena 40 g + proteína 25 g + manzana","14:30 · Pollo 150 g + arroz 130 g + verduras","17:00 · Post-entreno: whey 30 g + creatina 5 g","20:00 · Pescado blanco 180 g + ensalada"],
+      "Miércoles":["10:00 · Tostada integral + huevo + tomate","14:30 · Pavo 160 g + boniato 220 g + verduras","17:00 · Yogur proteico + fruta","20:00 · Salmón 140 g + verduras"],
+      "Jueves":["10:00 · Yogur + frutos rojos + avena + kiwi","14:30 · Ternera 140 g + patata 220 g","17:00 · Queso fresco batido 250 g","20:00 · Tortilla + ensalada"],
+      "Viernes":["10:00 · Tortitas de avena y claras + manzana","14:30 · Pollo 150 g + pasta 130 g + verduras","17:00 · Post-entreno: whey 30 g + creatina 5 g","20:00 · Merluza + crema verduras"],
+      "Sábado":["10:00 · Avena + yogur","14:30 · Flexible con proteína y verdura","17:00 · Proteína o fruta","20:00 · Cena ligera"],
+      "Domingo":["10:00 · Tostada + huevo","14:30 · Comida familiar controlada","17:00 · Yogur","20:00 · Pescado blanco + verduras"]
+    }
+  },
+  {
+    week:4,title:"Semana 4 · Ayuno intermitente · Consolidación",
+    days:{
+      "Lunes":["10:00 · Tortitas: avena 40 g + 1 huevo + claras 150 g","14:30 · Pollo 150 g + arroz 120 g + verduras","17:00 · Post-entreno: whey 30 g + creatina 5 g","20:00 · Pescado blanco 180 g + ensalada + aguacate 50 g"],
+      "Martes":["10:00 · Yogur 250 g + avena 40 g + manzana","14:30 · Pavo 160 g + boniato 220 g","17:00 · Queso fresco batido 250 g","20:00 · Merluza 180 g + verduras"],
+      "Miércoles":["10:00 · Tostada integral + huevo + kiwi","14:30 · Ternera 140 g + patata 220 g","17:00 · Post-entreno: whey 30 g + creatina 5 g","20:00 · Tortilla + ensalada"],
+      "Jueves":["10:00 · Avena + proteína + yogur","14:30 · Pollo 150 g + pasta 120 g + verduras","17:00 · Fruta + yogur proteico","20:00 · Pescado blanco + crema verduras"],
+      "Viernes":["10:00 · Yogur + fruta + avena + almendras 15 g","14:30 · Pavo 150 g + arroz 120 g","17:00 · Queso fresco batido 250 g","20:00 · Pollo 130 g + verduras"],
+      "Sábado":["10:00 · Desayuno controlado alto en proteína","14:30 · Comida flexible controlada","17:00 · Yogur o proteína","20:00 · Cena ligera"],
+      "Domingo":["10:00 · Tostada + huevo + fruta","14:30 · Comida familiar priorizando proteína","17:00 · Yogur","20:00 · Pescado o tortilla + verduras"]
+    }
+  }
+];
+
+const compra = [
+  "Pollo/pavo: 2 kg por semana","Pescado blanco: 1 kg","Salmón: 400-500 g","Ternera magra: 500 g",
+  "Huevos: 18 unidades","Claras: 2 botes","Yogur griego 0% / proteicos: 12-14 unidades",
+  "Queso fresco batido: 5-6 tarrinas","Proteína whey para post-entreno","Arroz: 1 kg","Avena: 500 g",
+  "Patata/boniato: 3 kg","Pan integral","Fruta variada: 3 kg","Verduras variadas: 4-5 kg",
+  "Aguacate: 2 unidades","Almendras o frutos secos naturales"
+];
+
+const baseKey = "vertikaDieta4SemanasHTML";
+
+function getChecks(){return JSON.parse(localStorage.getItem(baseKey+"_checks")||"{}")}
+function setChecks(v){localStorage.setItem(baseKey+"_checks",JSON.stringify(v))}
+function getPeso(){return JSON.parse(localStorage.getItem(baseKey+"_peso")||"[]")}
+function setPeso(v){localStorage.setItem(baseKey+"_peso",JSON.stringify(v))}
+
+function render(){
+  const weekTabs=document.getElementById("weekTabs");
+  weekTabs.innerHTML=dieta.map((w,i)=>`<button class="${i===0?'active':''}" onclick="showWeek(${i},this)">Semana ${w.week}</button>`).join("");
+  renderShopping();
+  showWeek(0,weekTabs.querySelector("button"));
+  renderPeso();
+}
+function showWeek(index,btn){
+  document.querySelectorAll("#weekTabs button").forEach(b=>b.classList.remove("active"));
+  if(btn)btn.classList.add("active");
+  const week=dieta[index];
+  const checks=getChecks();
+  let html=`<h3>${week.title}</h3>`;
+  Object.entries(week.days).forEach(([day,meals])=>{
+    html+=`<details class="card" open><summary><strong>${day}</strong></summary>`;
+    meals.forEach((meal,i)=>{
+      const id=`w${week.week}-${day}-${i}`;
+      html+=`<label><input type="checkbox" ${checks[id]?'checked':''} onchange="toggleCheck('${id}',this.checked)"> ${meal}</label>`;
+    });
+    html+=`</details>`;
+  });
+  document.getElementById("daysContainer").innerHTML=html;
+}
+function toggleCheck(id,value){
+  const checks=getChecks();
+  checks[id]=value;
+  setChecks(checks);
+}
+function renderShopping(){
+  const checks=getChecks();
+  document.getElementById("shoppingList").innerHTML=compra.map((item,i)=>{
+    const id="shop-"+i;
+    return `<label><input type="checkbox" ${checks[id]?'checked':''} onchange="toggleCheck('${id}',this.checked)"> ${item}</label>`;
+  }).join("");
+}
+function guardarPesoSemanal(){
+  const semana=document.getElementById("pesoSemana").value;
+  const peso=Number(document.getElementById("pesoValor").value);
+  const cintura=Number(document.getElementById("cinturaValor").value);
+  if(!peso||!cintura){alert("Añade peso y cintura.");return;}
+  const data=getPeso();
+  const existing=data.find(x=>x.semana===semana);
+  if(existing){existing.peso=peso;existing.cintura=cintura;existing.fecha=new Date().toLocaleDateString("es-ES")}
+  else data.push({semana,peso,cintura,fecha:new Date().toLocaleDateString("es-ES")});
+  setPeso(data);
+  document.getElementById("pesoValor").value="";
+  document.getElementById("cinturaValor").value="";
+  renderPeso();
+}
+function renderPeso(){
+  const data=getPeso().sort((a,b)=>Number(a.semana)-Number(b.semana));
+  const box=document.getElementById("pesoResumen");
+  if(!data.length){box.innerHTML="<p>Aún no hay seguimiento semanal guardado.</p>";return;}
+  const inicial=data[0];
+  box.innerHTML=data.map(x=>{
+    const kg=(inicial.peso-x.peso).toFixed(1).replace(".0","");
+    const cm=(inicial.cintura-x.cintura).toFixed(1).replace(".0","");
+    return `<p>Semana ${x.semana} · ${x.peso} kg · cintura ${x.cintura} cm · cambio: -${kg} kg / -${cm} cm</p>`;
+  }).join("");
+}
+document.addEventListener("DOMContentLoaded",render);
+</script>
+</body>
+</html>
